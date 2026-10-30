@@ -1490,6 +1490,19 @@ Item {
             return "CLIPBOARD_TOGGLE_SUCCESS";
         }
 
+        function extractText(entryId: int): string {
+            if (ClipboardService.ocrBusy)
+                return "OCR_BUSY";
+            if (entryId <= 0)
+                return "INVALID_ENTRY_ID";
+            ClipboardService.extractText({ id: entryId, isImage: true });
+            return "OCR_STARTED";
+        }
+
+        function ocrStatus(): string {
+            return JSON.stringify({busy: ClipboardService.ocrBusy, entryId: ClipboardService.ocrEntryId});
+        }
+
         target: "clipboard"
     }
 

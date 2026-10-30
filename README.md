@@ -1,5 +1,10 @@
 # Dux Shell
 
+This fork adds local English and Simplified Chinese OCR to clipboard image
+entries. The default `clipboard-ocr` branch follows upstream `master` (currently
+version **2.0**) and requires a matching backend.
+See [clipboard OCR setup and usage](docs/clipboard-ocr.md).
+
 <div align="center">
   <a href="https://duxlabs.dev">
     <img src="assets/danklogo.svg" alt="Dux Shell" width="200">
